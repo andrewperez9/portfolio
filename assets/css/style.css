@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  /* Left Sidebar */
+  .sidebar {
+    flex: 1;
+    background-color: #0a0a23;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sidebar p {
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  
+  .links a {
+    display: block;
+    color: #90cdf4;
+    margin: 0.25rem 0;
+    text-decoration: none;
+  }
+  
+  /* Projects Section */
+  .projects {
+    flex: 2;
+    padding: 3rem 2rem;
+    overflow-y: auto;
+  }
+  
+  .projects h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .project {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .project:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .project img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .project-info {
+    padding: 1rem;
+  }
+  
+  .project-info h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-info p {
+    margin-bottom: 0.75rem;
+  }
+  
+  .project-link-text {
+    color: #007acc;
+    font-weight: bold;
+    text-decoration: underline;
+  }  
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .projects, .sidebar {
+      padding: 1.5rem;
+    }
+  
+    .project {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .project img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  

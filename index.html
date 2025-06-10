@@ -1,15 +1,36 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Andrew Perez | Data Analyst</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andrew Perez | Data Analyst Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div id="sidebar"></div>
-  <main id="content">
-    <div id="projects"></div>
-  </main>
-  <script src="template.js"></script>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="assets/img/andrew.jpg" alt="Andrew Perez"/>
+      <h1>Andrew Perez</h1>
+      <div class="about">
+        <p>Data Analyst passionate about turning complex data into actionable insights. Skilled with Python, SQL, Tableau, and data storytelling.</p>
+      </div>
+      <div class="links">
+        <a href="mailto:acperez926@gmail.com" target="_blank">Email</a>
+        <a href="https://linkedin.com/in/andrew-perez926" target="_blank">LinkedIn</a>
+        <a href="assets/AndrewPerez_Resume.pdf" target="_blank">Resume</a>
+      </div>
+    </aside>
+
+
+    <!-- Main content -->
+    <main class="main-content">
+      <!-- Project cards -->
+      <div class="projects" id="projects"></div>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

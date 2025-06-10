@@ -1,0 +1,122 @@
+/* Reset and basic styling */
+* {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0; padding: 0; height: 100vh; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  background: #f5f7fa;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Left Sidebar */
+.sidebar {
+  flex: 1;
+  width: 280px;
+  background-color: #1e293b;
+  color: #fff;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2563eb;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar h1 {
+  font-size: 1.8rem;
+  margin: 0 0 0.7rem 0;
+}
+
+.sidebar .links {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.sidebar .links a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.sidebar .links a:hover {
+  color: #3b82f6;
+}
+
+.sidebar .about {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* Right main content */
+.main-content {
+  margin-left: 280px; /* same as sidebar width */
+  padding: 2rem 3rem;
+  overflow-y: auto;
+  flex-grow: 1;
+  background: #fff;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.project-card {
+  cursor: pointer;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
+  padding: 1rem;
+  transition: box-shadow 0.3s ease;
+  background: #fafafa;
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 18px rgb(0 0 0 / 0.12);
+}
+
+.project-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.project-card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+  color: #1e293b;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}

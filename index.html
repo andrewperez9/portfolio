@@ -1,35 +1,15 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Andrew Perez | Data Analyst</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <!-- Left Column -->
-    <div data-include="partials/sidebar.html"></div>
-
-    <!-- Right Column -->
-    <main class="projects">
-      <h2>Featured Projects</h2>
-
-      <!-- Projects -->
-      <a href="noshow.html" target="_blank" class="project">
-        <img src="assets/img/NoShowDashboard.png" alt="No-Show Dashboard" />
-        <div class="project-info">
-          <h3>No-show Appointments Dashboard</h3>
-          <p>Analyzed patient appointment data to identify patterns in missed visits. Built in Power BI with visual KPIs, filters, and exportable insights.</p>
-          <span class="project-link-text">Click anywhere to view Dashboard</span>
-        </div>
-      </a>
-
-    </main>
-  </div>
-
-  <!-- Load -->
-  <script src="assets/js/loadPartials.js"></script>
-
+  <div id="sidebar"></div>
+  <main id="content">
+    <div id="projects"></div>
+  </main>
+  <script src="template.js"></script>
 </body>
 </html>

@@ -3,7 +3,10 @@
   box-sizing: border-box;
 }
 body, html {
-  margin: 0; padding: 0; height: 100vh; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0; 
+  padding: 0; 
+  height: 100vh; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #222;
   background: #f5f7fa;
 }
@@ -18,7 +21,6 @@ body, html {
 /* Left Sidebar */
 .sidebar {
   flex: 1;
-  width: 280px;
   background-color: #1e293b;
   color: #fff;
   padding: 2rem 1.5rem;
@@ -27,6 +29,7 @@ body, html {
   align-items: center;
   position: fixed;
   height: 100vh;
+  width: 30%;
   overflow-y: auto;
   align-items: center;
   justify-content: center;

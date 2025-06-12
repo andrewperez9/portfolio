@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>No-Show Appointments Dashboard | Andrew Perez</title>
+  <title>No-Show Dashboard | Andrew Perez</title>
   <link rel="stylesheet" href="../css/style.css" />
   <style>
-    /* Simple styling override for project page */
+    /* style override */
     body {
       background: #f5f7fa;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #222;
       padding: 2rem;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
     }
-    h1 {
-      color: #1e293b;
+    h1, h2, h3 {
+      color: #16658E;
     }
     img {
       max-width: 100%;
       border-radius: 10px;
       margin-bottom: 1rem;
+
     }
     a.back-link {
       display: inline-block;
@@ -33,16 +34,99 @@
     a.back-link:hover {
       text-decoration: underline;
     }
+    b.callout {
+      color: #3CB1BA;
+    }
+
+    p.quote {
+      width: 70%;
+      margin: auto;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <h1>No-Show Appointments Dashboard</h1>
+  <h1>No-Show Dashboard</h1>
   <img src="../assets/img/NoShowDashboard.png" alt="No-Show Dashboard Screenshot" />
-  <p>This project is an interactive dashboard analyzing patient appointment no-shows. It uses Python, Tableau, and SQL to visualize trends and help healthcare providers reduce no-shows.</p>
+  
+  <h3>Patient No-show's come at the cost of clinics.</h3>
+  <p> In the U.S., the annual cost of missed appointments is <b class="callout">$150 billion</b>.<br>
+     This project uses Excel on a dataset of over 110,500 medical appointments to explore, analyze, visualize, and explain key causes for patient No-shows and methods for reducing it.</p>
+  
+  <h3>Objective</h3>
+  <p class="quote">"<b>What are the key factors</b> driving patient no-shows, and how can the clinic <b>reduce missed appointments by at least 15%</b>?"</p>
+
+  <h3>Key Findings</h3>
+  <ul>
+    <li>Patients aged 15–19 are most likely to No-show</li>
+    <li>SMS reminders show a statistically significant benefit to No-show rates</li>
+    <li>Patients from Gurigica, Jesus De Nazareth, Itararé, or Horto are most likely to No-show</li>
+    <li>Patients with longer Wait Times are more likely to No-show</li>
+    <li>Beginning of the month and beginning of the week are the most busy, having the highest number of Appointments and No-shows</li>
+  </ul>
+
+  <h3>Recommendation & Expected Impact</h3>
+  <p>The summation of my analysis brings 3 main fronts to reducing No-show rates:
+    <ul>
+      <li>Age groups</li>
+      <li>SMS messaging</li>
+      <li>Neighborhood</li>
+    </ul>
+  </p>
+
+  <p>My recommendation is to launch a <i>“Show & Snack”</i> pilot targeted at 15–19 year-olds by partnering with neighborhood eateries to promote appointment attendance. 
+    In conjunction, full integration of SMS messaging for all appointments to remind patients of their appointments. 
+    Finally, partnering with community organizations in the top No-showing Neighborhoods to provide transportation support.</p>
+  
+  <ol>
+    <li><b class="callout">Pilot <i>“Show & Snack”</i> Incentive</b>
+    <p>
+      <ul>
+        <li><u>Description</u>: Partner with local eateries to send digital $5 food coupons via SMS to 15–19 year-old patients upon attending their appointments</li>
+        <li><u>Rationale</u>: This age group has the highest No-show rate (34%) and most food-spending in Brazil for younger people is food related<sup>[2]</sup>, SMS messages are a quick and effective way to distribute the coupons
+        <li><u>Expected Impact</u>: Based on behavioral-contracting studies, a coupon incentive will help <b>reduce No-show rates by an expected 13%</b><sup>[3,4]</sup>, which means clinics will expect to fill an <b>additional 2,660 appointment slots</b> (or nearly 100 appt./day). In Brazil, a visit to a general practitioner is expected to cost on average $51 USD (BRL 120)<sup>[5]</sup>, meaning <b>$135,660 USD</b> from newly attended appointments if effective
+      </ul>
+    </p>
+    </li>
+
+    <li><b class="callout">Community-Organized Transportation Shuttle System</b>
+      <p>
+        <ul>
+          <li><u>Description</u>: Partner with community organizations in the highest No-showing Neighborhoods to facilitate transportation support through a shuttle system that takes patients to the clinic from pick-up/drop-off areas. Information regarding shuttle times, pick-up zones, etc. can be communicated through SMS</li>
+          <li><u>Rationale</u>: Transportation is often recognized as a barrier of entry to healthcare access<sup>[6]</sup>, the shuttle system will provides accessibility</li>
+          <li><u>Expected Impact</u>: Reduction of No-show rates in affected neighborhoods toward the average, <b>expected 5-10%</b> improvement based off Neighborhood vs No-show</li>
+        </ul>
+      </p>
+      </li>
+
+      <li><b class="callout">Priority Scheduling for High-Risk patients</b>
+        <p>
+          <ul>
+            <li><u>Description</u>: Prioritize scheduling such that target high-No-show groups (15–19 year-olds, medical conditions, patients with previous No-shows, etc.) are less likely to miss their appointment</li>
+            <li><u>Rationale</u>: Analysis of Wait Time vs No-show gave insight that higher wait times lead to higher No-show rates</li>
+            <li><u>Expected Impact</u>: Priority scheduling for high-risk patients offsets some likelihood of patient No-shows, <b>expected 5-10%</b> improvement based on Wait Time vs No-show</li>
+          </ul>
+        </p>
+      </li>
+
+      <li><b class="callout">Standardized SMS Reminders</b>
+        <p>
+          <ul>
+            <li><u>Description</u>: Standardize SMS reminder and confirmation messages for all appointments. Require patients to confirm or deny their planned attendance via SMS sent 1 day before their appointment</li>
+            <li><u>Rationale</u>: Analysis on SMS vs No-show indicated a positive relationship between sending an SMS reminder and patient attendance</li>
+            <li><u>Expected Impact</u>: <b>Reduce No-show rates by at least 2%</b>, resulting in <b>410 more appointments attended</b>, or <b>$20,910 USD</b> from newly attended appointments</li>
+          </ul>
+        </p>
+      </li>
+  </ol>
+
+  <h3>Conclusion</h3>
+  <p>After the cleaning, exploration, analysis, and visualization, I proposed a No-show reduction plan based on discovered key factors that expects to answer the business question of reducing patient No-shows by at least 15% and saving an estimated <b class="callout">$156,570 USD</b> in recovered appointments. Below is a report that describes each step of the project and goes into more detail with chart analysis. Thank you for viewing my project.</p>
 
  <!-- Google Doc -->
-  <iframe src="https://docs.google.com/document/d/e/2PACX-1vRR5TICn2mGWlLWTAjgroPywfC72SZrwimOH5h9JwYXtZPVSmf9ykTGdPDtP-gk7uSbuGpoaLna8qfV/pub?embedded=true"width="800" height="718" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></iframe>
-
+ <h3>Project Report</h3>
+  <iframe src="https://docs.google.com/document/d/e/2PACX-1vRR5TICn2mGWlLWTAjgroPywfC72SZrwimOH5h9JwYXtZPVSmf9ykTGdPDtP-gk7uSbuGpoaLna8qfV/pub?embedded=true"width="800" height="718" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  <!-- back link-->
   <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
 </body>
 </html>

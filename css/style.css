@@ -80,13 +80,13 @@ body, html {
   padding: 2rem 3rem;
   overflow-y: auto;
   flex-grow: 1;
-  background: #fff;
+  background: #d6e0e5;
 }
 
 .projects {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 
 .project-card {
@@ -108,7 +108,7 @@ body, html {
 .project-card img {
   max-width: 100%;
   border-radius: 8px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-card h2 {
@@ -122,4 +122,37 @@ body, html {
   color: #475569;
   line-height: 1.5;
   margin: 0;
+}
+
+/* Mobile Responsive Layout */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1.5rem 1rem;
+  }
+
+  .projects {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
 }

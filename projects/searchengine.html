@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CPP Faculty Search Engine | Andrew Perez</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* style override */
+    body {
+      background: #f5f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h3 {
+      color: #379A8B;
+    }
+
+    h2 {
+      color: #379A8B;
+      text-align: center;
+      margin: auto;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+      text-decoration: none;
+      color: #3b82f6;
+      font-weight: 600;
+    }
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+    b.callout {
+      color: #3CB1BA;
+    }
+
+    p.quote {
+      width: 70%;
+      margin: auto;
+      text-align: center;
+    }
+    .column {
+      float: left;
+      width: 50%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <h1>Faculty Search Engine</h1>
+  <img src="../assets/img/SearchEngine.png" alt="CPP Search Engine Screenshot" />
+  
+  <h2>As a student, finding a faculty mentor can be hard.</h2>
+
+  <h3>Description</h3>
+  <p>This project is a full-stack search engine that indexes faculty pages from the Cal Poly Pomona Biology Department so that students can easily find faculty based on bioinformatics or biology-related keywords. It uses web scraping, TF-IDF vectorization, cosine similarity, and Flask APIs.</p>
+
+  <!-- Google Slides -->
+  <h3>Presentation</h3>
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQG7W-Y2Lxzhk3f_mRpOIbJ11DQ-D5h2A_VBEec3bJxZKjrg2mQHP9VTLUtFD1FqaYFEgXFch6VSwYk/pubembed?start=true&loop=true&delayms=5000" frameborder="0" width="820" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    
+  <h3>Try it for yourself</h3>
+  <a href="https://github.com/andrewperez9/CPP-Search-Engine"> GitHub Project Repository</a> <br>
+
+
+  <div class="row">
+    <div class="column">
+      <h3>Features</h3>
+      <ul>
+        <li>Crawls and scrapes faculty web pages using </li>
+        <li>Builds TF-IDF vectors from relevant content</li>
+        <li>Stores documents in MongoDB</li>
+        <li>Serves a Flask API for querying</li>
+        <li>Uses NLTK for text processing and lemmatization</li>
+        <li>Simple front-end to search and view results</li>
+      </ul>
+    </div>
+
+    <div class="column">
+
+      <div class="row">
+        <h3>Tools Used</h3>
+        <div class="column">
+          <p> Search Engine
+          <ul>
+            <li>Beautiful Soup</li>
+            <li>Pymongo (Mongo Client)</li>
+            <li>Urllib (URLopen)</li>
+            <li>Seaborn (CountVectorizer)</li>
+            <li>RE</li>
+            <li>NLTK (WordNetLemmatizer)</li>
+            <li>Flask</li>
+          </ul>
+          </p>
+        </div>
+        <div class="column">
+          <p> Web App
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </p>
+        </div>
+      </div> 
+    </div>
+  </div> 
+
+  <!-- back link-->
+  <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
+</body>
+</html>

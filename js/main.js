@@ -7,17 +7,23 @@ const projects = [
     page: "projects/noshow.html"
   },
   {
-    name: "Mobility Scooter Safety Analysis",
-    image: "assets/mobility-scooter.png",
-    description: "Computer vision project to assess mobility scooter safety metrics for healthcare professionals.",
-    page: "projects/mobility-scooter.html"
+    name: "Fake News Detection",
+    image: "assets/img/fakenews.png",
+    description: "Machine Learning model built to detect Fake News based on ",
+    page: "projects/fakenews.html"
   },
   {
-    name: "Sales Data Visualization",
-    image: "assets/sales-viz.png",
-    description: "Sales trends and insights dashboard built with Power BI and SQL.",
-    page: "projects/sales-visualization.html"
-  }
+    name: "CPP Faculty Search Engine",
+    image: "assets/img/SearchEngine.png",
+    description: "Made for students to quickly find faculty members based on search keywords. Made with Python and JavaScript.",
+    page: "projects/searchengine.html"
+  },
+  {
+    name: "STARS - Automated Blender Decal",
+    image: "assets/mobility-scooter.png",
+    description: "Computer vision project to assess mobility scooter safety metrics for healthcare professionals.",
+    page: "projects/stars.html"
+  },
 ];
 
 const projectsContainer = document.getElementById('projects');

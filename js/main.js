@@ -9,7 +9,7 @@ const projects = [
   {
     name: "Fake News Detection",
     image: "assets/img/fakenews.png",
-    description: "Machine Learning model built to detect Fake News based on ",
+    description: "Machine Learning models built to detect Fake News based on short context. Built with Python.",
     page: "projects/fakenews.html"
   },
   {
@@ -20,9 +20,15 @@ const projects = [
   },
   {
     name: "STARS - Automated Blender Decal",
-    image: "assets/mobility-scooter.png",
-    description: "Computer vision project to assess mobility scooter safety metrics for healthcare professionals.",
+    image: "assets/img/stars.png",
+    description: "Furthering research in photogrammetry by developing automated pipeline for applying aecals to 3D models in Blender, using Python.",
     page: "projects/stars.html"
+  },
+  {
+    name: "Cinema - Movie Recommender",
+    image: "assets/img/cinema.webp",
+    description: "Website recommender for movies based on favorite genres and keywords.",
+    page: "https://replit.com/@lm2203793/Cinema"
   },
 ];
 

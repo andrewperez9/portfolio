@@ -21,7 +21,7 @@ const projects = [
   {
     name: "STARS - Automated Blender Decal",
     image: "assets/img/stars.png",
-    description: "Furthering research in photogrammetry by developing automated pipeline for applying aecals to 3D models in Blender, using Python.",
+    description: "Furthering research in photogrammetry by developing automated pipeline for applying decals to 3D models in Blender, using Python.",
     page: "projects/stars.html"
   },
   {

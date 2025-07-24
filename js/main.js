@@ -1,9 +1,15 @@
 // Sample project data — replace with your own info
 const projects = [
   {
+    name: "Healthcare Desert Mapping",
+    image: "assets/img/comingsoon.jpg",
+    description: "Mapping healthcare access inequality in Los Angeles County by identifying high-vulnerability and underserved cencus tracts. Made with ArcGIS.",
+    page: ""
+  },
+  {
     name: "No-Show Appointments Dashboard",
     image: "assets/img/NoShowDashboard.png",
-    description: "Interactive dashboard analyzing patient appointment no-shows using Python and Tableau.",
+    description: "Interactive dashboard and analysis of key features in reducing patient appointment no-shows. Made in Excel.",
     page: "projects/noshow.html"
   },
   {
@@ -29,7 +35,7 @@ const projects = [
     image: "assets/img/cinema.webp",
     description: "Website recommender for movies based on favorite genres and keywords.",
     page: "https://replit.com/@lm2203793/Cinema"
-  },
+  }
 ];
 
 const projectsContainer = document.getElementById('projects');

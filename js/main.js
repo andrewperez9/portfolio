@@ -1,10 +1,10 @@
 // Sample project data — replace with your own info
 const projects = [
   {
-    name: "Healthcare Desert Mapping",
-    image: "assets/img/comingsoon.jpg",
+    name: "L.A. Healthcare Desert Mapping",
+    image: "assets/img/gis.png",
     description: "Mapping healthcare access inequality in Los Angeles County by identifying high-vulnerability and underserved cencus tracts. Made with ArcGIS.",
-    page: ""
+    page: "https://pomona.maps.arcgis.com/apps/dashboards/23320b3f40c54e539c33795e634b69d7"
   },
   {
     name: "No-Show Appointments Dashboard",

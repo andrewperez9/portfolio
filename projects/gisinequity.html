@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>L.A. Inequity Mapping | Andrew Perez</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* style override */
+    body {
+      background: #f5f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h3 {
+      color: #8b1f1f;
+    }
+
+    h2 {
+      color: #8b1f1f;
+      text-align: center;
+      margin: auto;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+      text-decoration: none;
+      color: #8b1f1f;
+      font-weight: 600;
+    }
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+    b.callout {
+      color: #f10808;
+    }
+
+    b.callout2 {
+
+      font-size: large;
+    }
+
+    p.quote {
+      width: 70%;
+      margin: auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Health and Social Inequities Mapping in Los Angeles County</h1>
+  <iframe src="https://pomona.maps.arcgis.com/apps/dashboards/23320b3f40c54e539c33795e634b69d7" width="120%" height="718" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+  <a href="https://pomona.maps.arcgis.com/apps/dashboards/23320b3f40c54e539c33795e634b69d7" class="back-link">Click here for dashboard only</a>
+
+  <h2>Not all communities receive resources equally.</h2>
+  <p> Across the U.S., inequitable distribution of public resources leads to 
+    <b class="callout">gaps in healthcare access</b> for underserved neighborhoods.<br><br>
+    This project leverages <b>ArcGIS</b>, <b>Python</b>, and U.S. Census data to analyze 
+    socioeconomic and demographic factors, calculate an Inequity Score, 
+    and visualize which communities are most at risk of being underserved.
+ </p>
+  
+  <h3>Problem Statement</h3>
+  <p class="quote">Access to healthcare is uneven across Los Angeles County. Adjacent neighborhoods face overlapping social, economic, and medical barriers that lead to worse health outcomes. Public agencies need a clear, <b>data-driven method to identify underserved communities</b> and guide equitable resource distribution.</p>
+
+  <h3>Methods</h3>
+  <ol>
+    <li><b class="callout">Data Integration</b>
+        <p><ul>
+            <li>Performed <b>spatial joins</b> from TIGER tracts on SVI, Health Professional Shortage (HPS), and Medically Underserved Areas (MUA) data to create a unified layer of LA County census tracts. </li>
+            <li>This composite layer contains information on socioeconomic status, household characteristics (e.g. English proficiency, disabilities), racial and ethnic status, housing type and transportation (e.g. no vehicle, mobile home).</li>
+          </ul></p>
+    </li>
+    <li><b class="callout">Calculated Fields</b>
+        <p><ul>
+            <li>From the composite inequity layer, multiple calculated fields were created including statistics on HPS score, MUA score, and overall SVI theme scores. These statistics were then used in the following formula to create a composite ‘Inequity Score’ which was calculated using an <b>Arcade script</b>.</li>
+            <li>This produced an Inequity score with a range from 0.0 – 0.5 that describes inequity within a single tract based on the gathered data from HPS, MUA, and SVI where higher scores relate to worse conditions.</li>
+          </ul></p>
+    </li>
+
+  </ol>
+
+  <h3>Dashboard Features</h3>
+  <ul>
+    <li>Left-side
+        <p><ul>
+            <li><u>Interactive Map</u>: pan, zoom, and click onto tracts to see pop-up information. Different layers show different pop-up information when clicked.</li>
+            <li><u>Drop-down menu</u>: navigate through the main inequity regions through the bookmark icon, or toggle the visibility of the main 3 layers from the stack icon.</li>
+            <li><u>Main 3 layers</u>:
+                <p><ul>
+                    <li>LA Tracts - Healthcare Inequity: composite layer of HPSA, CDC SVI, and U.S. Census data</li>
+                    <li>ACS Racial Demographics: census tract-level population data from American Community Survey providing racial and ethnic composition, from ArcGIS Living Atlas</li>
+                    <li>ACS Health Insurance Coverage by Race: census tract-level health insurance coverage estimates by age group and race/ethnicity, from ArcGIS Living Atlas</li>
+                </ul></p>
+            </li>
+        </ul></p>
+    </li>
+
+    <li>Right-side
+        <p><ul>
+            <li><u>Inequity Score slider</u>: filter the visibility of tracts on the (red-colored) inequity layer that are below the specified slider value.</li>
+            <img src="../assets/img/gisslider.png" style="height: 200px; width: 300px">
+            <li><u>Legend</u>: describes what the currently visible main layer is showing</li>
+            <li><u>Highest Inequity Tracts</u>: a list of the top 10 highest inequity tracts with additional information. Click to navigate to selected tract.</li>
+            <img src="../assets/img/gislist.png" style="height: 400px; width: 300px">
+            <li><u>Race pie</u>: shows the race distribution of L.A.'s population with no healthcare coverage</li>
+            <img src="../assets/img/gispie.png" style="height: 400px; width: 300px">
+        </ul></p>
+    </li>
+
+  </ul>
+
+  <h3>Key Findings</h3>
+
+  <p>My recommendation is to launch a <i>“Show & Snack”</i> pilot targeted at 15–19 year-olds by partnering with neighborhood eateries to promote appointment attendance. 
+    In conjunction, full integration of SMS messaging for all appointments to remind patients of their appointments. 
+    Finally, partnering with community organizations in the top No-showing Neighborhoods to provide transportation support.</p>
+  
+  <ol>
+    <li><b class="callout2">Inglewood to Bellflower, Compton to East Hollywood</b><br><br>
+        <img src="../assets/img/giszone1.png" style="height: 400px; width: 400px" alt="LA Inequity Map Screenshot"/>
+    </li>
+
+    <li><b class="callout2">Wilmington to Downtown Long Beach</b><br><br>
+        <img src="../assets/img/giszone2.png" style="height: 300px; width: 600px" alt="LA Inequity Map Screenshot"/>
+    </li>
+
+    <li><b class="callout2">San Fernando Valley, Sun Valley, Van Nuys</b><br><br>
+        <img src="../assets/img/giszone3.png" style="height: 400px; width: 600px" alt="LA Inequity Map Screenshot"/>
+    </li>
+
+    <li><b class="callout2">Pomona</b><br><br>
+        <img src="../assets/img/giszone4.png" style="height: 400px; width: 400px" alt="LA Inequity Map Screenshot"/>
+    </li>
+
+    <li><b class="callout2">Santa Fe Springs</b><br><br>
+        <img src="../assets/img/giszone5.png" style="height: 400px; width: 400px" alt="LA Inequity Map Screenshot"/>
+    </li>
+
+    <li><b class="callout2">El Monte</b><br><br>
+        <img src="../assets/img/giszone6.png" style="height: 400px; width: 400px" alt="LA Inequity Map Screenshot"/>
+        
+    </li>
+    <li><b class="callout2">Redman</b><br><br>
+        <img src="../assets/img/giszone7.png" style="height: 400px; width: 400px" alt="LA Inequity Map Screenshot"/>
+    </li>
+  </ol>
+
+  <h3>Conclusion</h3>
+  <p>Public health departments, urban planners, and community nonprofits can use this dashboard to identify neighborhoods most in need of clinic expansion, mobile health services, or funding. This project demonstrates how <b>integrating social vulnerability and healthcare access data</b> can reveal structural health inequities in Los Angeles County.</p>
+
+ <!-- Google Doc -->
+ <h3>Project Report</h3>
+  <iframe src="https://docs.google.com/document/d/e/2PACX-1vQbsaJSwkS2hAa79PF2xBbjfme4pE4HxviW-iUzH1z4uy8uHG4Oukv3fJrK8lzx4FrRnYMvCTq5SkWy/pub?embedded=true" width="1500" height="718" frameborder="0" marginheight="0" marginwidth="0">Report</iframe>
+  <!-- back link-->
+  <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
+</body>
+</html>

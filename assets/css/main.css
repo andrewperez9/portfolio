@@ -3219,7 +3219,7 @@ input, select, textarea {
 			}
 
 	}
-
+	
 /* Desktop sliding panel */
 #project-panel {
 	position: fixed;
@@ -3278,14 +3278,15 @@ input, select, textarea {
 	border-top-right-radius: 10px;
 }
 
-/* Landscape override for mobile panel */
+/* Landscape override for mobile panel on phones */
 @media (max-width: 768px) and (orientation: landscape) {
 	#project-panel-mobile {
 		top: 0;
+		bottom: 0;          /* stretch top to bottom */
 		left: 0;
 		width: 100vw;
 		height: 100vh;
-		max-height: none;
+		max-height: 100vh;
 		border-radius: 0;
 		box-shadow: none;
 		transform: translateY(100%);
@@ -3295,9 +3296,10 @@ input, select, textarea {
 		transform: translateY(0);
 	}
 
+	/* Don't shrink header on mobile landscape */
 	#header.shrink {
-		width: 100%;
-		transition: none;
+		width: 100% !important;
+		transition: none !important;
 	}
 }
 

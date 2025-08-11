@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const cleanHTML = injectStylesFromHTML(html);
         contentContainer.innerHTML = cleanHTML;
         panel.classList.add('active');
+        panel.scrollTop = 0;
       });
   }
 

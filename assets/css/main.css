@@ -3220,8 +3220,7 @@ input, select, textarea {
 
 	}
 
-	/* New Stuff */
-	/* Sliding project panel styles */
+/* Desktop sliding panel */
 #project-panel {
 	position: fixed;
 	top: 0;
@@ -3234,17 +3233,25 @@ input, select, textarea {
 	overflow-y: auto;
 	transition: right 0.5s ease;
 	z-index: 10000;
-  }
-  
-  #project-panel.active {
+}
+
+#project-panel #main {
+	margin-left: 0 !important;
+	width: 100% !important;
+	max-width: none !important;
+	padding-left: 0 !important;
+	padding-top: 3% !important;
+}
+
+#project-panel.active {
 	right: 0;
-  }
-  
-  #project-panel .content {
+}
+
+#project-panel .content {
 	padding: 2rem;
-  }
-  
-  #close-panel {
+}
+
+#close-panel {
 	position: absolute;
 	top: 10px;
 	left: 10px;
@@ -3252,18 +3259,59 @@ input, select, textarea {
 	border: none;
 	font-size: 2rem;
 	cursor: pointer;
-  }
-  
-  /* Shrink header effect */
-  #header.shrink {
-	width: 25%;
-	transition: width 0.5s ease;
-  }
-  
-  #project-panel #main {
-	margin-left: 0 !important;
-	width: 100% !important;
-	max-width: none !important;
-	padding-left: 0 !important;
-	padding-top: 3% !important;
-  }
+}
+
+/* Mobile sliding panel */
+#project-panel-mobile {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	max-height: 100vh;
+	background: white;
+	box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+	overflow-y: auto;
+	transform: translateY(100%);
+	transition: transform 0.3s ease-in-out;
+	z-index: 10000;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+#project-panel-mobile.active {
+	transform: translateY(0);
+}
+
+#close-panel-mobile {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 1.5rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+/* Media queries to hide unused panels based on viewport */
+
+/* Hide desktop panel on small/mobile screens */
+@media (max-width: 768px) {
+	#project-panel {
+		display: none !important;
+	}
+}
+
+/* Hide mobile panel on desktop */
+@media (min-width: 769px) {
+	#project-panel-mobile {
+		display: none !important;
+	}
+}
+
+/* Shrink header effect — only for desktop */
+@media (min-width: 769px) {
+	#header.shrink {
+		width: 25%;
+		transition: width 0.5s ease;
+	}
+}

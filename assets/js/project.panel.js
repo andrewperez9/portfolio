@@ -11,15 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const panelContentMobile = panelMobile.querySelector('.content');
   const closeBtnMobile = document.getElementById('close-panel-mobile');
 
-  // Keep track of injected styles to remove later
   let injectedStyleElements = [];
 
   function injectStylesFromHTML(html) {
     const styleMatches = html.match(/<style[^>]*>([\s\S]*?)<\/style>/gi) || [];
-
     injectedStyleElements.forEach(el => el.remove());
     injectedStyleElements = [];
-
     styleMatches.forEach(styleTag => {
       const styleElem = document.createElement('style');
       styleElem.classList.add('injected-project-style');
@@ -27,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.head.appendChild(styleElem);
       injectedStyleElements.push(styleElem);
     });
-
     return html.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
   }
 
@@ -38,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const cleanHTML = injectStylesFromHTML(html);
         contentContainer.innerHTML = cleanHTML;
         panel.classList.add('active');
-        panel.scrollTop = 0;
+        panel.scrollTop = 0; // Reset scroll position
       });
   }
 
@@ -56,23 +52,28 @@ document.addEventListener('DOMContentLoaded', function () {
     injectedStyleElements = [];
   }
 
-  // Handle project link clicks
+  function isMobilePreferredLayout() {
+    const isSmallHeight = window.innerHeight < 500; // landscape phones
+    const isSmallWidth = window.innerWidth <= 768; // portrait phones / tablets
+    return isSmallHeight || isSmallWidth;
+  }
+
   document.querySelectorAll('.project-link').forEach(link => {
     link.addEventListener('click', function (e) {
       e.preventDefault();
       const href = this.getAttribute('href');
-      console.log('Window width:', window.innerWidth);
+      console.log('Window size:', window.innerWidth, 'x', window.innerHeight);
 
-      if (window.innerWidth > 768) {
-        // Desktop: close mobile panel first to avoid overlap
-        closeMobilePanel();
-        header.classList.add('shrink');
-        loadProjectContent(href, panelContentDesktop, panelDesktop);
-      } else {
-        // Mobile: close desktop panel first
+      if (isMobilePreferredLayout()) {
+        // Mobile full-screen panel (portrait or landscape phones)
         closeDesktopPanel();
         header.classList.add('shrink');
         loadProjectContent(href, panelContentMobile, panelMobile);
+      } else {
+        // Desktop slide-in panel
+        closeMobilePanel();
+        header.classList.add('shrink');
+        loadProjectContent(href, panelContentDesktop, panelDesktop);
       }
     });
   });
@@ -80,12 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
   closeBtnDesktop.addEventListener('click', closeDesktopPanel);
   closeBtnMobile.addEventListener('click', closeMobilePanel);
 
-  // Close mobile panel when clicking outside content area
   panelMobile.addEventListener('click', e => {
     if (e.target === panelMobile) closeMobilePanel();
   });
 
-  // ESC closes any open panel
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       if (panelDesktop.classList.contains('active')) closeDesktopPanel();

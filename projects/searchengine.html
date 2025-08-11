@@ -4,33 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CPP Faculty Search Engine | Andrew Perez</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
   <style>
-    /* style override */
-    body {
-      background: #f5f7fa;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #222;
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1, h3 {
+    #project-panel-content h1, 
+    #project-panel-content h3 {
       color: #185048;
     }
 
-    h2 {
+    #project-panel-content h2 {
       color: #185048;
       text-align: center;
       margin: auto;
     }
-    img {
+    #project-panel-content img {
       max-width: 100%;
       border-radius: 10px;
       margin-bottom: 1rem;
 
     }
-    a.back-link {
+    #project-panel-content a.back-link {
       display: inline-block;
       margin-top: 2rem;
       margin-bottom: 4rem;
@@ -38,99 +30,117 @@
       color: #3b82f6;
       font-weight: 600;
     }
-    a.back-link:hover {
+    #project-panel-content a.back-link:hover {
       text-decoration: underline;
     }
-    b.callout {
+    #project-panel-content b.callout {
       color: #379A8B;
     }
 
-    p.quote {
+    #project-panel-content p.quote {
       width: 70%;
       margin: auto;
       text-align: center;
     }
-    .column {
+    #project-panel-content .column {
       float: left;
       width: 50%;
     }
-
-    @media screen and (max-width: 768px) {
-      .column {
-      width: 100%;
-      float: none;
-    }
-    }
-
     /* Clear floats after the columns */
-    .row:after {
+    #project-panel-content .row:after {
       content: "";
       display: table;
       clear: both;
     }
   </style>
 </head>
-<body>
-  <h1>Faculty Search Engine</h1>
-  <img src="../assets/img/SearchEngine.png" alt="CPP Search Engine Screenshot" />
-  
-  <h2>As a student, finding a faculty mentor can be hard.</h2>
+<body class="is-preload">
 
-  <h3>Description</h3>
-  <p>This project is a <b class="callout">full-stack search engine that indexes faculty web pages</b> from the Cal Poly Pomona Biology Department so that students can easily find faculty based on bioinformatics or biology-related keywords. It uses <b>web scraping</b>, <b>TF-IDF vectorization</b>, cosine similarity, and <b>Flask APIs</b> in <b>Python</b>.</p>
+  <div id="header-container"></div>
 
-  <!-- Google Slides -->
-  <h3>Presentation</h3>
-  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQG7W-Y2Lxzhk3f_mRpOIbJ11DQ-D5h2A_VBEec3bJxZKjrg2mQHP9VTLUtFD1FqaYFEgXFch6VSwYk/pubembed?start=true&loop=true&delayms=5000" frameborder="0" width="820" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-    
-  <h3>Try it for yourself</h3>
-  <a href="https://github.com/andrewperez9/CPP-Search-Engine"> GitHub Project Repository</a> <br>
-
-
-  <div class="row">
-    <div class="column">
-      <h3>Features</h3>
-      <ul>
-        <li>Crawls and scrapes faculty web pages using BeautifulSoup</li>
-        <li>Builds TF-IDF vectors from relevant content</li>
-        <li>Stores documents in MongoDB</li>
-        <li>Serves a Flask API for querying</li>
-        <li>Uses NLTK for text processing and lemmatization</li>
-        <li>Simple front-end to search and view results</li>
-      </ul>
-    </div>
-
-    <div class="column">
-
-      <div class="row">
-        <h3>Tools Used</h3>
-        <div class="column">
-          <p><b class="callout">Search Engine</b>
-          <ul>
-            <li>Beautiful Soup</li>
-            <li>Pymongo (Mongo Client)</li>
-            <li>urllib (urlopen)</li>
-            <li>Scikit-learn (CountVectorizer)</li>
-            <li>RE</li>
-            <li>NLTK (WordNetLemmatizer)</li>
-            <li>Flask</li>
-          </ul>
-          </p>
-        </div>
-        <div class="column">
-          <p> <b class="callout">Web App</b>
+  <div id="project-panel-content">
+  <div id="wrapper">
+    <div id="main">
+      <div class="inner">
+        <h1>Faculty Search Engine</h1>
+        <img src="../images/projects/SearchEngine/SearchEngine.png" alt="CPP Search Engine Screenshot" />
+        
+        <h2>As a student, finding a faculty mentor can be hard.</h2>
+      
+        <h3>Description</h3>
+        <p>This project is a <b class="callout">full-stack search engine that indexes faculty web pages</b> from the Cal Poly Pomona Biology Department so that students can easily find faculty based on bioinformatics or biology-related keywords. It uses <b>web scraping</b>, <b>TF-IDF vectorization</b>, cosine similarity, and <b>Flask APIs</b> in <b>Python</b>.</p>
+      
+        <!-- Google Slides -->
+        <h3>Presentation</h3>
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQG7W-Y2Lxzhk3f_mRpOIbJ11DQ-D5h2A_VBEec3bJxZKjrg2mQHP9VTLUtFD1FqaYFEgXFch6VSwYk/pubembed?start=true&loop=true&delayms=5000" frameborder="0" width="820" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+          
+        <h3>Try it for yourself</h3>
+        <a href="https://github.com/andrewperez9/CPP-Search-Engine"> GitHub Project Repository</a> <br><br >
+      
+      
+        <div class="row">
+          <div class="column">
+            <h3>Features</h3>
             <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
+              <li>Crawls and scrapes faculty web pages using BeautifulSoup</li>
+              <li>Builds TF-IDF vectors from relevant content</li>
+              <li>Stores documents in MongoDB</li>
+              <li>Serves a Flask API for querying</li>
+              <li>Uses NLTK for text processing and lemmatization</li>
+              <li>Simple front-end to search and view results</li>
             </ul>
-          </p>
+          </div>
+        
+          <div class="column">
+            <h3>Tools Used</h3>
+            <div class="row">
+              <div class="column">
+                <p><b class="callout">Search Engine</b></p>
+                <ul>
+                  <li>Beautiful Soup</li>
+                  <li>Pymongo</li>
+                  <li>urllib</li>
+                  <li>Scikit-learn</li>
+                  <li>RE</li>
+                  <li>NLTK</li>
+                  <li>Flask</li>
+                </ul>
+              </div>
+              <div class="column">
+                <p><b class="callout">Web App</b></p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </div> 
+      
+        <!-- back link-->
+        <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
+      </div>
     </div>
-  </div> 
+  </div>
+</div>
 
-  <!-- back link-->
-  <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
+  <script>
+      window.addEventListener('load', function () {
+        const target = document.getElementById('main');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' }); // or 'smooth'
+        }
+      });
+  </script>
+  
+  <!-- Scripts -->
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/browser.min.js"></script>
+  <script src="../assets/js/breakpoints.min.js"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="/assets/js/header.insert.js"></script>
+
 </body>
 </html>

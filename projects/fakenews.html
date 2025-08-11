@@ -3,34 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fake News  | Andrew Perez</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <title>Fake News | Andrew Perez</title>
+  <link rel="stylesheet" href="../assets/css/main.css" />
   <style>
     /* style override */
-    body {
-      background:#f5f7fa; /*f5f7fa*/
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #222;
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1, h3 {
+    #project-panel-content h1, 
+    #project-panel-content h3 {
       color: #655294;
     }
-
-    h2 {
+    #project-panel-content h2 {
       color: #655294;
       text-align: center;
       margin: auto;
     }
-    img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-
-    }
-    a.back-link {
+    #project-panel-content a.back-link {
       display: inline-block;
       margin-top: 2rem;
       margin-bottom: 4rem;
@@ -38,109 +24,136 @@
       color: #3b82f6;
       font-weight: 600;
     }
-    a.back-link:hover {
+    #project-panel-content a.back-link:hover {
       text-decoration: underline;
     }
-    b.callout {
+    #project-panel-content b.callout {
       color: #4b5aff;
     }
-
-    p.quote {
+    #project-panel-content img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    #project-panel-content p.quote {
       width: 70%;
       margin: auto;
       text-align: center;
     }
-    .column {
+    #project-panel-content .column {
       float: left;
       width: 50%;
     }
 
     /* Clear floats after the columns */
-    .row:after {
+    #project-panel-content .row:after {
       content: "";
       display: table;
       clear: both;
     }
   </style>
 </head>
-<body>
-  <h1>Fake News: Machine Learning Project</h1>
-  <img src="../assets/img/fakenews.png" alt="Fake News Project card" />
-  
-  <h2>Fake News and misinformation is rampant.</h2>
-  <p>In the modern social media age, we are inundated with misinformation that is often small and given without context. These lies have <b>major ramifications on our lives</b>. They are conveyed through headlines, social media posts, and comments, often small and containing as little as 10 words.</p>
+<body class="is-preload">
 
-  <h3>Project Description</h3>
-  <p>This project aimed to develop a system that can <b class="callout">determine the truthfulness of a statement</b> given minimal information. We used <b>Natural Language Processing</b> techniques and the following <b>Machine Learning</b> algorithms in <b>Python</b> to accomplish this:</p>
+  <div id="header-container"></div>
 
-  <ul>
-    <li>K-Nearest Neighbors (KNN)</li>
-    <li>Convolutional Neural Network (CNN)</li>
-    <li>Logistic Regression</li>
-    <li>Support Vector Machine (SVM)</li>
-    <li>Recurrent Neural Network (RNN)</li>
-  </ul>
-
-  <h3>Dataset Description</h3>
-  <a href="https://www.kaggle.com/datasets/doanquanvietnamca/liar-dataset"> Kaggle Dataset</a>
-  <p>This dataset contains over <b>11,000 statements</b> along with related key information and, most importantly, the degree of truthfulness.
-    <ul>
-      <li>Label (truthfulness)
+  <div id="project-panel-content">
+  <div id="wrapper">
+    <div id="main">
+      <div class="inner">
+        <h1>Fake News: Machine Learning Project</h1>
+        <img src="../images/projects/fakenews/fakenews.png" alt="Fake News Project card" />
+        <h2>Fake News and misinformation is rampant.</h2>
+        <p>In the modern social media age, we are inundated with misinformation that is often small and given without context. These lies have <b>major ramifications on our lives</b>. They are conveyed through headlines, social media posts, and comments, often small and containing as little as 10 words.</p>
+        <h3>Project Description</h3>
+        <p>This project aimed to develop a system that can <b class="callout">determine the truthfulness of a statement</b> given minimal information. We used <b>Natural Language Processing</b> techniques and the following <b>Machine Learning</b> algorithms in <b>Python</b> to accomplish this:</p>
         <ul>
-          <li>true</li>
-          <li>mostly-true</li>
-          <li>half-true</li>
-          <li>barely-true</li>
-          <li>false</li>
-          <li>pants-on-fire</li>
+          <li>K-Nearest Neighbors (KNN)</li>
+          <li>Convolutional Neural Network (CNN)</li>
+          <li>Logistic Regression</li>
+          <li>Support Vector Machine (SVM)</li>
+          <li>Recurrent Neural Network (RNN)</li>
         </ul>
-      </li>
-      <li>Statement</li>
-      <li>Speaker (name)</li>
-      <li>Credit History (past counts of truthfulness)</li>
-    </ul>
-  </p>
-  <p>Example:</p>
-  <blockquote>
-    <p>Label: true</p>
-    <p>Statement: "Putting three Republicans in my Cabinet... is unprecedented."</p>
-    <p>Title: President of the United States, Affiliation: democrat</p>
-    <p>Credit History: (70 barely-true, 71 false, 160 half-true, 163 mostly-true, 9 pants-on-fire)</p>
-  </blockquote>
-
-  <div class="row">
-    <div class="column">
-      <h3>Model: Accuracy%</h3>
-      <ul>
-        <li>K-Nearest Neighbors: <b class="callout">21.7%</b></li>
-        <li>Convolutional Neural Network: <b class="callout">22.0%</b></li>
-        <li>Logistic Regression: <b class="callout">24.0%</b></li>
-        <li>Support Vector Machine: <b class="callout">25.1%</b></li>
-        <li>Recurrent Neural Network: <b class="callout">27.0%</b></li>
-      </ul>
-    </div>
-
-    <div class="column">
-        <h3>Tools Used</h3>
+      
+        <h3>Dataset Description</h3>
+        <a href="https://www.kaggle.com/datasets/doanquanvietnamca/liar-dataset"> Kaggle Dataset</a>
+        <p>This dataset contains over <b>11,000 statements</b> along with related key information and, most importantly, the degree of truthfulness.
           <ul>
-            <li>NumPy</li>
-            <li>TensorFlow</li>
-            <li>NLTK</li>
-            <li>Word2Vec</li>
-            <li>TextBlob</li>
+            <li>Label (truthfulness)
+              <ul>
+                <li>true</li>
+                <li>mostly-true</li>
+                <li>half-true</li>
+                <li>barely-true</li>
+                <li>false</li>
+                <li>pants-on-fire</li>
+              </ul>
+            </li>
+            <li>Statement</li>
+            <li>Speaker (name)</li>
+            <li>Credit History (past counts of truthfulness)</li>
           </ul>
+        </p>
+        <p>Example:</p>
+        <pre><code>
+Label: true
+Statement: "Putting three Republicans in my Cabinet... is unprecedented."
+Title: President of the United States, Affiliation: democrat
+Credit History: (70 barely-true, 71 false, 160 half-true, 163 mostly-true, 9 pants-on-fire)
+        </code></pre>
+      
+        <div class="row">
+          <div class="column">
+            <h3>Model: Accuracy%</h3>
+            <ul>
+              <li>K-Nearest Neighbors: <b class="callout">21.7%</b></li>
+              <li>Convolutional Neural Network: <b class="callout">22.0%</b></li>
+              <li>Logistic Regression: <b class="callout">24.0%</b></li>
+              <li>Support Vector Machine: <b class="callout">25.1%</b></li>
+              <li>Recurrent Neural Network: <b class="callout">27.0%</b></li>
+            </ul>
+          </div>
+        
+          <div class="column">
+              <h3>Tools Used</h3>
+                <ul>
+                  <li>NumPy</li>
+                  <li>TensorFlow</li>
+                  <li>NLTK</li>
+                  <li>Word2Vec</li>
+                  <li>TextBlob</li>
+                </ul>
+          </div>
+      
+        <!-- Google Slides -->
+        <h3>Presentation</h3>
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSrdj5YCfthHq2QlDjLBF2BkIV_T4IE__d91VJwWDww34Vi_LlbWlOAKfBzxbF_L_k8eoYAfMFyTK_I/pubembed?start=true&loop=true&delayms=5000" frameborder="0" width="820" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <!-- Google Docs-->
+        <h3>Report</h3>
+        <iframe src="https://docs.google.com/document/d/e/2PACX-1vT8fqawD_gpXqHtgqkurF7IzlSRHRf4MuWapfBwCEVxmgDQmu4InaTJuNoI6l0RRhyCPwH1R7-HPmkA/pub?embedded=true" width="800" height="718" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+      
+        <!-- back link-->
+        <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
+      </div>
     </div>
-  </div> 
+  </div>
+  </div>
 
-  <!-- Google Slides -->
-  <h3>Presentation</h3>
-  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSrdj5YCfthHq2QlDjLBF2BkIV_T4IE__d91VJwWDww34Vi_LlbWlOAKfBzxbF_L_k8eoYAfMFyTK_I/pubembed?start=true&loop=true&delayms=5000" frameborder="0" width="820" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+  <script>
+      window.addEventListener('load', function () {
+        const target = document.getElementById('main');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' }); // or 'smooth'
+        }
+      });
+  </script>
   
-  <!-- Google Docs-->
-  <h3>Report</h3>
-  <iframe src="https://docs.google.com/document/d/e/2PACX-1vT8fqawD_gpXqHtgqkurF7IzlSRHRf4MuWapfBwCEVxmgDQmu4InaTJuNoI6l0RRhyCPwH1R7-HPmkA/pub?embedded=true" width="800" height="718" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-
-  <!-- back link-->
-  <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
+  <!-- Scripts -->
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/browser.min.js"></script>
+  <script src="../assets/js/breakpoints.min.js"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="/assets/js/header.insert.js"></script>
 </body>
 </html>

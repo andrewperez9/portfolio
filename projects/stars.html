@@ -4,33 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>STARS Research | Andrew Perez</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
   <style>
     /* style override */
-    body {
-      background: #f5f7fa;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #222;
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1, h3 {
+    #project-panel-content h1, 
+    #project-panel-content h3 {
       color: #185048;
     }
 
-    h2 {
+    #project-panel-content h2 {
       color: #185048;
       text-align: center;
       margin: auto;
     }
-    img {
+    #project-panel-content img {
       max-width: 100%;
       border-radius: 10px;
       margin-bottom: 1rem;
 
     }
-    a.back-link {
+    #project-panel-content a.back-link {
       display: inline-block;
       margin-top: 2rem;
       margin-bottom: 4rem;
@@ -38,40 +31,69 @@
       color: #3b82f6;
       font-weight: 600;
     }
-    a.back-link:hover {
+    #project-panel-content a.back-link:hover {
       text-decoration: underline;
     }
-    b.callout {
+    #project-panel-content b.callout {
       color: #379A8B;
     }
 
-    p.quote {
+    #project-panel-content p.quote {
       width: 70%;
       margin: auto;
       text-align: center;
     }
 
-    iframe {
+    #project-panel-content iframe {
       width: 100%;
       max-width: 100%;
       height: 718px;
       border: none;
     }
-</style>
-
+  </style>
 </head>
-<body>
-  <h1>Automated Decal Pipeline</h1>
-  <img src="../assets/img/starsPoster.png" alt="Automated Decal Pipeline Pres. Screenshot" />
+<body class="is-preload">
+
+  <div id="header-container"></div>
+
+  <div id="project-panel-content">
+  <div id="wrapper">
+    <div id="main">
+      <div class="inner">
+        <h1>Automated Decal Pipeline</h1>
+        <img src="../images/projects/stars/starsPoster.png" alt="Automated Decal Pipeline Pres. Screenshot" />
+            
+        <h2>Photogrammetry is the science and art of obtaining 3D information from photographs.</h2>
+        <p> Architectural engineering, forensic analysis, virtual reality, archaeology, 3D printing, and surveying all benefit from photogrammetry. <b class="callout">Its range of applications continues to grow across industries.</b></p>
+        <p>With this automated pipeline made in <b>Python</b>, the process of rendering a 3D model can be streamlined.</p>
+            
+        <!-- Google Doc -->
+        <h3>Project Report</h3>
+        <iframe src="https://docs.google.com/document/d/e/2PACX-1vTWgCWe-VAlPUIvAoBrpfth_yFNw-3HTGPwQN-WxjhG1P8fngJfTl99NeyCcth2_o3gNzSejSQytnZ2/pub?embedded=true">Loading…</iframe>
+        <!-- back link-->
+        <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Header include loader -->
+  <script>
+      window.addEventListener('load', function () {
+        const target = document.getElementById('main');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' }); // or 'smooth'
+        }
+      });
+  </script>
   
-  <h2>Photogrammetry is the science and art of obtaining 3D information from photographs.</h2>
-  <p> Architectural engineering, forensic analysis, virtual reality, archaeology, 3D printing, and surveying all benefit from photogrammetry. <b class="callout">Its range of applications continues to grow across industries.</b></p>
-  <p>With this automated pipeline made in <b>Python</b>, the process of rendering a 3D model can be streamlined.</p>
+  <!-- Scripts -->
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/browser.min.js"></script>
+  <script src="../assets/js/breakpoints.min.js"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="/assets/js/header.insert.js"></script>
   
- <!-- Google Doc -->
- <h3>Project Report</h3>
-  <iframe src="https://docs.google.com/document/d/e/2PACX-1vTWgCWe-VAlPUIvAoBrpfth_yFNw-3HTGPwQN-WxjhG1P8fngJfTl99NeyCcth2_o3gNzSejSQytnZ2/pub?embedded=true">Loading…</iframe>
-  <!-- back link-->
-  <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
 </body>
 </html>

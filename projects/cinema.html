@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cinema Movie Recommender | Andrew Perez</title>
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <style>
+    h1, h3 {
+      color: #b1553c;
+    }
+
+    h2 {
+      color: #185048;
+      text-align: center;
+      margin: auto;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+      text-decoration: none;
+      color: #3b82f6;
+      font-weight: 600;
+    }
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+    b.callout {
+      color: #379A8B;
+    }
+
+    p.quote {
+      width: 70%;
+      margin: auto;
+      text-align: center;
+    }
+    .column {
+      float: left;
+      width: 50%;
+    }
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+<body class="is-preload">
+
+  <div id="header-container"></div>
+
+  <div id="wrapper">
+    <div id="main">
+      <div class="inner">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Header include loader -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+      });
+  </script>
+  <script>
+      window.addEventListener('load', function () {
+        const target = document.getElementById('main');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' }); // or 'smooth'
+        }
+      });
+  </script>
+  
+  <!-- Scripts -->
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/browser.min.js"></script>
+  <script src="../assets/js/breakpoints.min.js"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

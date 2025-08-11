@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const styleMatches = html.match(/<style[^>]*>([\s\S]*?)<\/style>/gi) || [];
     injectedStyleElements.forEach(el => el.remove());
     injectedStyleElements = [];
+
     styleMatches.forEach(styleTag => {
       const styleElem = document.createElement('style');
       styleElem.classList.add('injected-project-style');
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.head.appendChild(styleElem);
       injectedStyleElements.push(styleElem);
     });
+
     return html.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
   }
 
@@ -34,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const cleanHTML = injectStylesFromHTML(html);
         contentContainer.innerHTML = cleanHTML;
         panel.classList.add('active');
-        panel.scrollTop = 0; // Reset scroll position
+        panel.scrollTop = 0; // Reset scroll to top
       });
   }
 
@@ -52,28 +54,27 @@ document.addEventListener('DOMContentLoaded', function () {
     injectedStyleElements = [];
   }
 
-  function isMobilePreferredLayout() {
-    const isSmallHeight = window.innerHeight < 500; // landscape phones
-    const isSmallWidth = window.innerWidth <= 768; // portrait phones / tablets
-    return isSmallHeight || isSmallWidth;
+  // Check if device is likely a phone
+  function isPhone() {
+    return /Mobi|Android/i.test(navigator.userAgent);
   }
 
+  // Handle project link clicks
   document.querySelectorAll('.project-link').forEach(link => {
     link.addEventListener('click', function (e) {
       e.preventDefault();
       const href = this.getAttribute('href');
-      console.log('Window size:', window.innerWidth, 'x', window.innerHeight);
 
-      if (isMobilePreferredLayout()) {
-        // Mobile full-screen panel (portrait or landscape phones)
-        closeDesktopPanel();
-        header.classList.add('shrink');
-        loadProjectContent(href, panelContentMobile, panelMobile);
-      } else {
-        // Desktop slide-in panel
+      if (!isPhone() && window.innerWidth > 768) {
+        // Desktop behavior
         closeMobilePanel();
         header.classList.add('shrink');
         loadProjectContent(href, panelContentDesktop, panelDesktop);
+      } else {
+        // Always mobile behavior for phones, portrait or landscape
+        closeDesktopPanel();
+        header.classList.add('shrink');
+        loadProjectContent(href, panelContentMobile, panelMobile);
       }
     });
   });

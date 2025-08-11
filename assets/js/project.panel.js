@@ -1,12 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const header = document.getElementById('header');
 
-  // Desktop panel elements
   const panelDesktop = document.getElementById('project-panel');
   const panelContentDesktop = panelDesktop.querySelector('.content');
   const closeBtnDesktop = document.getElementById('close-panel');
 
-  // Mobile panel elements
   const panelMobile = document.getElementById('project-panel-mobile');
   const panelContentMobile = panelMobile.querySelector('.content');
   const closeBtnMobile = document.getElementById('close-panel-mobile');
@@ -15,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function injectStylesFromHTML(html) {
     const styleMatches = html.match(/<style[^>]*>([\s\S]*?)<\/style>/gi) || [];
+
     injectedStyleElements.forEach(el => el.remove());
     injectedStyleElements = [];
 
@@ -36,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const cleanHTML = injectStylesFromHTML(html);
         contentContainer.innerHTML = cleanHTML;
         panel.classList.add('active');
-        panel.scrollTop = 0; // Reset scroll to top
+        panel.scrollTop = 0;
       });
   }
 
@@ -54,26 +53,44 @@ document.addEventListener('DOMContentLoaded', function () {
     injectedStyleElements = [];
   }
 
-  // Check if device is likely a phone
-  function isPhone() {
-    return /Mobi|Android/i.test(navigator.userAgent);
+  // Simple helpers:
+  function isMobileWidth() {
+    return window.innerWidth <= 768;
   }
 
-  // Handle project link clicks
+  function isLandscape() {
+    return window.matchMedia('(orientation: landscape)').matches;
+  }
+
   document.querySelectorAll('.project-link').forEach(link => {
     link.addEventListener('click', function (e) {
+      // allow modifier keys
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       e.preventDefault();
-      const href = this.getAttribute('href');
 
-      if (!isPhone() && window.innerWidth > 768) {
-        // Desktop behavior
+      const href = this.getAttribute('href');
+      if (!href) return;
+
+      if (!isMobileWidth()) {
+        // Desktop: desktop panel
         closeMobilePanel();
         header.classList.add('shrink');
         loadProjectContent(href, panelContentDesktop, panelDesktop);
       } else {
-        // Always mobile behavior for phones, portrait or landscape
+        // Mobile: always mobile panel
+
         closeDesktopPanel();
-        header.classList.add('shrink');
+
+        if (isLandscape()) {
+          // Mobile landscape: fullscreen mobile panel, no header shrink
+          header.classList.remove('shrink');
+          document.body.classList.add('mobile-landscape');
+        } else {
+          // Mobile portrait: normal mobile panel, shrink header
+          header.classList.add('shrink');
+          document.body.classList.remove('mobile-landscape');
+        }
+
         loadProjectContent(href, panelContentMobile, panelMobile);
       }
     });

@@ -3219,8 +3219,7 @@ input, select, textarea {
 			}
 
 	}
-
-	/* Desktop panel */
+/* Desktop sliding panel */
 #project-panel {
 	position: fixed;
 	top: 0;
@@ -3229,12 +3228,12 @@ input, select, textarea {
 	height: 100%;
 	background: #fff;
 	box-sizing: border-box;
-	box-shadow: -4px 0 10px rgba(0,0,0,0.3);
+	box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
 	overflow-y: auto;
 	transition: right 0.5s ease;
 	z-index: 10000;
   }
-
+  
   #project-panel #main {
 	margin-left: 3% !important;
 	width: 100% !important;
@@ -3247,6 +3246,10 @@ input, select, textarea {
 	right: 0;
   }
   
+  #project-panel .content {
+	padding: 2rem;
+  }
+  
   #close-panel {
 	position: absolute;
 	top: 10px;
@@ -3257,7 +3260,7 @@ input, select, textarea {
 	cursor: pointer;
   }
   
-  /* Mobile panel */
+  /* Mobile sliding panel */
   #project-panel-mobile {
 	position: fixed;
 	top: 1%;
@@ -3266,7 +3269,7 @@ input, select, textarea {
 	width: 100%;
 	max-height: 100vh;
 	background: white;
-	box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+	box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
 	overflow-y: auto;
 	transform: translateY(100%);
 	transition: transform 0.3s ease-in-out;
@@ -3279,6 +3282,31 @@ input, select, textarea {
 	transform: translateY(0);
   }
   
+  /* Mobile landscape fullscreen override */
+  @media (max-width: 820) and (orientation: landscape) {
+	#project-panel-mobile {
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  width: 100vw;
+	  height: 100vh;
+	  max-height: 100vh;
+	  border-radius: 0;
+	  box-shadow: none;
+	  transform: translateY(100%);
+	}
+  
+	#project-panel-mobile.active {
+	  transform: translateY(0);
+	}
+  
+	/* Disable header shrink on mobile landscape */
+	#header.shrink {
+	  width: 100% !important;
+	  transition: none !important;
+	}
+  }
+  
   #close-panel-mobile {
 	position: absolute;
 	top: 10px;
@@ -3289,43 +3317,25 @@ input, select, textarea {
 	cursor: pointer;
   }
   
-  /* Hide desktop panel on mobile */
-  @media (max-width: 768px) {
+  /* Hide desktop panel on small/mobile screens */
+  @media (max-width: 820px) {
 	#project-panel {
 	  display: none !important;
 	}
   }
   
   /* Hide mobile panel on desktop */
-  @media (min-width: 769px) {
+  @media (min-width: 821) {
 	#project-panel-mobile {
 	  display: none !important;
 	}
   }
   
-  /* Header shrink on desktop */
-  @media (min-width: 769px) {
+  /* Shrink header effect — desktop only */
+  @media (min-width: 820px) {
 	#header.shrink {
 	  width: 25%;
 	  transition: width 0.5s ease;
 	}
-  }
-  
-  /* Fullscreen mobile panel on landscape phones */
-  body.mobile-landscape #project-panel-mobile {
-	top: 0 !important;
-	bottom: 0 !important;
-	left: 0 !important;
-	width: 100vw !important;
-	height: 100vh !important;
-	max-height: 100vh !important;
-	border-radius: 0 !important;
-	box-shadow: none !important;
-	transform: translateY(0) !important;
-  }
-  
-  body.mobile-landscape #header {
-	width: 100% !important;
-	transition: none !important;
   }
   

@@ -53,45 +53,41 @@ document.addEventListener('DOMContentLoaded', function () {
     injectedStyleElements = [];
   }
 
-  // Simple helpers:
   function isMobileWidth() {
-    return window.innerWidth <= 768;
+    return window.innerWidth <= 820;
   }
 
   function isLandscape() {
-    return window.matchMedia('(orientation: landscape)').matches;
+    return window.matchMedia("(orientation: landscape)").matches;
   }
 
   document.querySelectorAll('.project-link').forEach(link => {
     link.addEventListener('click', function (e) {
-      // allow modifier keys
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       e.preventDefault();
 
       const href = this.getAttribute('href');
       if (!href) return;
 
-      if (!isMobileWidth()) {
-        // Desktop: desktop panel
+      console.log('[panel] clicked:', href, 'window size:', window.innerWidth, 'x', window.innerHeight, 'landscape:', isLandscape());
+
+      if (isMobileWidth()) {
+        // Mobile panel for ALL small widths (portrait or landscape)
+        closeDesktopPanel();
+        if (isLandscape()) {
+          console.log('[panel] Using MOBILE panel in LANDSCAPE');
+          header.classList.remove('shrink');
+        } else {
+          console.log('[panel] Using MOBILE panel in PORTRAIT');
+          header.classList.add('shrink');
+        }
+        loadProjectContent(href, panelContentMobile, panelMobile);
+      } else {
+        // Desktop panel for larger widths
         closeMobilePanel();
+        console.log('[panel] Using DESKTOP panel');
         header.classList.add('shrink');
         loadProjectContent(href, panelContentDesktop, panelDesktop);
-      } else {
-        // Mobile: always mobile panel
-
-        closeDesktopPanel();
-
-        if (isLandscape()) {
-          // Mobile landscape: fullscreen mobile panel, no header shrink
-          header.classList.remove('shrink');
-          document.body.classList.add('mobile-landscape');
-        } else {
-          // Mobile portrait: normal mobile panel, shrink header
-          header.classList.add('shrink');
-          document.body.classList.remove('mobile-landscape');
-        }
-
-        loadProjectContent(href, panelContentMobile, panelMobile);
       }
     });
   });

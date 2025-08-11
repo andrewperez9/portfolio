@@ -3278,6 +3278,29 @@ input, select, textarea {
 	border-top-right-radius: 10px;
 }
 
+/* Landscape override for mobile panel */
+@media (max-width: 768px) and (orientation: landscape) {
+	#project-panel-mobile {
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		max-height: none;
+		border-radius: 0;
+		box-shadow: none;
+		transform: translateY(100%);
+	}
+
+	#project-panel-mobile.active {
+		transform: translateY(0);
+	}
+
+	#header.shrink {
+		width: 100%;
+		transition: none;
+	}
+}
+
 #project-panel-mobile.active {
 	transform: translateY(0);
 }
